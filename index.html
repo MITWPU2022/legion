@@ -1,4 +1,19 @@
 export default function PortfolioWebsite() {
+  const disableActions = (e) => {
+    e.preventDefault();
+  };
+
+  const handleKeyDown = (e) => {
+    if (
+      e.key === 'F12' ||
+      (e.ctrlKey && e.shiftKey && e.key === 'I') ||
+      (e.ctrlKey && e.key.toLowerCase() === 'u') ||
+      (e.ctrlKey && e.key.toLowerCase() === 's')
+    ) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <>
       <style>{`
@@ -79,33 +94,70 @@ export default function PortfolioWebsite() {
           display: inline-flex;
           align-items: center;
           gap: 10px;
+          color: white;
         }
 
         .btn-primary {
           background: #06b6d4;
-          color: white;
         }
 
         .btn-outline {
           border: 1px solid #334155;
-          color: white;
         }
 
         .btn-meeting {
           background: #2563eb;
-          color: white;
+        }
+
+        .btn:hover {
+          transform: translateY(-2px);
+          opacity: 0.9;
         }
 
         .bird {
           position: fixed;
-          top: 100px;
-          left: -100px;
+          left: -120px;
           font-size: 42px;
           z-index: 9999;
-          animation: flyBird 18s linear infinite;
           pointer-events: none;
           opacity: 0.9;
         }
+
+        .bird1 {
+          top: 80px;
+          animation: flyBird1 18s linear infinite;
+        }
+
+        .bird2 {
+          top: 180px;
+          animation: flyBird2 22s linear infinite;
+          animation-delay: 2s;
+        }
+
+        .bird3 {
+          top: 280px;
+          animation: flyBird3 20s linear infinite;
+          animation-delay: 4s;
+        }
+
+        .bird4 {
+          top: 380px;
+          animation: flyBird4 24s linear infinite;
+          animation-delay: 1s;
+        }
+
+        .bird5 {
+          top: 480px;
+          animation: flyBird5 26s linear infinite;
+          animation-delay: 3s;
+        }
+
+        .background-animation {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          top: 0;
+          left: 0;
 
         @keyframes flyBird {
           0% {
@@ -139,6 +191,7 @@ export default function PortfolioWebsite() {
           justify-content: center;
           font-size: 72px;
           font-weight: bold;
+          box-shadow: 0 20px 50px rgba(0,0,0,0.5);
         }
 
         .section-dark {
@@ -165,13 +218,21 @@ export default function PortfolioWebsite() {
           border-radius: 20px;
           padding: 25px;
           border: 1px solid #1e293b;
+          transition: 0.3s;
+        }
+
+        .skill:hover,
+        .card:hover {
+          border-color: #22d3ee;
+          transform: translateY(-5px);
         }
 
         .contact-box {
           text-align: center;
         }
 
-        .contact-box h3 {
+        .contact-box h3,
+        .recommendation h3 {
           color: #22d3ee;
           margin-bottom: 10px;
         }
@@ -199,8 +260,14 @@ export default function PortfolioWebsite() {
         }
       `}</style>
 
-      <div onContextMenu={(e) => e.preventDefault()}>
+      <div
+        onContextMenu={disableActions}
+        onCopy={disableActions}
+        onKeyDown={handleKeyDown}
+        tabIndex="0"
+      >
         <div className="bird">🕊️</div>
+
         <section className="hero">
           <div className="container hero-content">
             <div className="hero-text">
@@ -220,8 +287,9 @@ export default function PortfolioWebsite() {
                   rel="noreferrer"
                   className="btn btn-primary"
                 >
-                  ⭐ LinkedIn Recommendations
+                  ⭐ Recommendations
                 </a>
+
                 <a href="#contact" className="btn btn-primary">
                   Contact Me
                 </a>
@@ -236,7 +304,7 @@ export default function PortfolioWebsite() {
                 </a>
 
                 <a
-                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sachin+Kadam&dates=20260510T093000Z/20260510T103000Z&details=Discussion+regarding+Business+Intelligence,+Analytics,+TIBCO+Spotfire,+Power+BI,+AI%2FML,+Dashboard+Development,+and+Enterprise+Consulting.%0A%0AMeeting+Organizer%3A+Sachin+Kadam%0AEmail%3A+sachinkadam313%40gmail.com&location=Google+Meet&add=sachinkadam313@gmail.com
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sachin+Kadam&dates=20260510T093000Z/20260510T103000Z&details=Discussion+regarding+Business+Intelligence,+Analytics,+TIBCO+Spotfire,+Power+BI,+AI%2FML,+Dashboard+Development,+and+Enterprise+Consulting.&location=Google+Meet&add=sachinkadam313@gmail.com"
                   target="_blank"
                   rel="noreferrer"
                   className="btn btn-meeting"
@@ -269,6 +337,29 @@ export default function PortfolioWebsite() {
 
         <section className="section-dark">
           <div className="container">
+            <h2 className="section-title">Education</h2>
+
+            <div className="contact-grid">
+              <div className="card">
+                <h3>Executive Program</h3>
+                <p>IIM Nagpur - Project Management & Leadership</p>
+              </div>
+
+              <div className="card">
+                <h3>Master of Computer Applications</h3>
+                <p>Savitribai Phule Pune University</p>
+              </div>
+
+              <div className="card">
+                <h3>Bachelor of Computer Science</h3>
+                <p>Savitribai Phule Pune University</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-dark">
+          <div className="container">
             <h2 className="section-title">Technical Skills</h2>
 
             <div className="skills-grid">
@@ -276,73 +367,17 @@ export default function PortfolioWebsite() {
               <div className="skill">Power BI</div>
               <div className="skill">IBM Cognos</div>
               <div className="skill">Python</div>
-              <div className="skill">R Programming</div>
               <div className="skill">SQL & Snowflake</div>
               <div className="skill">Oracle & PostgreSQL</div>
-              <div className="skill">IronPython</div>
-              <div className="skill">JavaScript</div>
-              <div className="skill">HTML/CSS</div>
               <div className="skill">AI & Machine Learning</div>
-              <div className="skill">Data Science & Analytics</div>
               <div className="skill">Dashboard Optimization</div>
-              <div className="skill">ETL & Data Governance</div>
-              <div className="skill">Automation Services</div>
-              <div className="skill">Executive Reporting</div>
-              <div className="skill">Power BI</div>
-              <div className="skill">Python</div>
-              <div className="skill">SQL</div>
-              <div className="skill">JavaScript</div>
-              <div className="skill">AI & Machine Learning</div>
             </div>
           </div>
         </section>
 
         <section className="section-dark">
           <div className="container">
-            <h2 className="section-title">Certifications & Achievements</h2>
-
-            <div className="skills-grid">
-              <div className="skill">TIBCO Spotfire Certified Professional</div>
-              <div className="skill">Certified Scrum Master (CSM)</div>
-              <div className="skill">ITIL Foundation Certification</div>
-              <div className="skill">Alteryx Designer Core Certification</div>
-              <div className="skill">Project Management Certification - ISB/IIM Nagpur</div>
-              <div className="skill">Silver Recognition Award - IQVIA</div>
-              <div className="skill">Top Performer Award - Cognizant</div>
-              <div className="skill">Published AI/ML Research Papers</div>
-            </div>
-          </div>
-        </section>
-
-        <section className="section-dark">
-          <div className="container">
-            <h2 className="section-title">Recommendations & Testimonials</h2>
-
-            <div className="contact-grid">
-              <div className="card">
-                <h3>Professional Recommendations</h3>
-                <p>
-                  Recognized by colleagues and enterprise stakeholders for leadership,
-                  technical expertise, problem solving, and delivery excellence across
-                  healthcare, pharma, and analytics projects.
-                </p>
-              </div>
-
-              <div className="card">
-                <h3>Leadership & Collaboration</h3>
-                <p>
-                  Appreciated for mentoring teams, delivering high-quality analytics
-                  solutions, supporting enterprise BI transformations, and maintaining
-                  strong stakeholder communication.
-                </p>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        <section id="contact" className="section-dark">
-          <div className="container">
-            <h2 className="section-title">Get In Touch</h2>
+            <h2 className="section-title">Contact</h2>
 
             <div className="contact-grid">
               <div className="card contact-box">
@@ -357,33 +392,6 @@ export default function PortfolioWebsite() {
             </div>
           </div>
         </section>
-
-        <script dangerouslySetInnerHTML={{__html: `
-          document.addEventListener('keydown', function(e) {
-            if (e.key === 'F12') {
-              e.preventDefault();
-            }
-
-            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
-              e.preventDefault();
-            }
-
-            if (e.ctrlKey && e.key === 'u') {
-              e.preventDefault();
-            }
-
-            if (e.ctrlKey && e.key === 's') {
-              e.preventDefault();
-            }
-          });
-
-          document.addEventListener('copy', function(e) {
-            e.preventDefault();
-          });
-
-          console.clear();
-          console.log('Protected Portfolio Website');
-        `}} />
 
         <footer>
           © 2026 Sachin Kadam • Portfolio Website
