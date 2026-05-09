@@ -1,328 +1,322 @@
 export default function PortfolioWebsite() {
-  const skills = [
-    'TIBCO Spotfire',
-    'Power BI',
-    'Python',
-    'SQL',
-    'IronPython',
-    'JavaScript',
-    'HTML/CSS',
-    'AI & Machine Learning',
-    'IBM Cognos',
-    'Snowflake',
-    'Oracle',
-    'PostgreSQL'
-  ];
-
-  const experience = [
-    {
-      company: 'Virtana',
-      role: 'Senior Principal Consultant',
-      duration: 'Feb 2024 – Present',
-      points: [
-        'Developed 60+ pharmacovigilance dashboards using Spotfire.',
-        'Led dashboard optimization, governance, and onboarding initiatives.',
-        'Worked with Python, R, SQL, IronPython, and cloud/on-premise data sources.'
-      ]
-    },
-    {
-      company: 'MResult',
-      role: 'Technical Lead',
-      duration: 'Mar 2023 – Jan 2024',
-      points: [
-        'Built FDA-ready reporting dashboards and PDF outputs.',
-        'Collaborated with ETL and QA teams using Snowflake databases.',
-        'Delivered enterprise Spotfire analytics solutions.'
-      ]
-    },
-    {
-      company: 'Sopra Steria',
-      role: 'Technical Lead',
-      duration: 'Oct 2021 – Mar 2023',
-      points: [
-        'Managed end-to-end Spotfire solution delivery.',
-        'Led offshore teams and coordinated with global stakeholders.',
-        'Performed testing, deployment, and production support.'
-      ]
-    },
-    {
-      company: 'IQVIA',
-      role: 'Programmer',
-      duration: 'Nov 2019 – Oct 2021',
-      points: [
-        'Created COVID-19 and clinical trial dashboards.',
-        'Designed interactive Spotfire visualizations and templates.',
-        'Worked closely with business users and analytics teams.'
-      ]
-    },
-    {
-      company: 'Cognizant',
-      role: 'Programmer Analyst',
-      duration: 'Apr 2016 – Nov 2019',
-      points: [
-        'Built BI dashboards for Merck and Sanofi.',
-        'Developed IBM Cognos and Spotfire reporting solutions.',
-        'Provided production support and business analytics solutions.'
-      ]
-    }
-  ];
-
-  const certifications = [
-    'TIBCO Spotfire Certified Professional',
-    'Certified Scrum Master (CSM)',
-    'ITIL Foundation Certification',
-    'Alteryx Designer Core Certification',
-    'Power BI Training',
-    'AI & Machine Learning Training'
-  ];
-
   return (
-    <div className="min-h-screen bg-slate-950 text-white font-sans">
-      {/* Hero Section */}
-      <section className="px-6 py-20 lg:px-20 bg-gradient-to-r from-slate-900 via-slate-950 to-black">
-        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <p className="text-cyan-400 text-lg mb-4">
-              Senior BI & Analytics Consultant
-            </p>
+    <div
+      dangerouslySetInnerHTML={{
+        __html: `
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sachin Kadam | Portfolio</title>
 
-            <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
-              Sachin Kadam
-            </h1>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
 
-            <p className="text-slate-300 text-lg leading-relaxed mb-8">
-              Senior Principal Consultant with 9.9+ years of experience in
-              TIBCO Spotfire, Power BI, AI/ML, Python, SQL, and enterprise
-              analytics solutions.
-            </p>
+    body {
+      font-family: Arial, sans-serif;
+      background: #020617;
+      color: white;
+      line-height: 1.6;
+    }
 
-            <div className="flex flex-wrap gap-4">
-              <a
-                href="#contact"
-                className="px-6 py-3 rounded-2xl bg-cyan-500 hover:bg-cyan-400 transition font-semibold"
-              >
-                Contact Me
-              </a>
+    a {
+      text-decoration: none;
+    }
 
-              <a
-                href="https://www.linkedin.com/in/iim-nagpur/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-2xl border border-slate-700 hover:border-cyan-400 transition flex items-center gap-2"
-              >
-                <span className="text-lg">🔗</span>
-                LinkedIn
-              </a>
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
 
-              <a
-                href="https://wa.me/918087781156"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 transition flex items-center gap-2"
-              >
-                <span className="text-lg">💬</span>
-                WhatsApp
-              </a>
-            </div>
-          </div>
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(to right, #0f172a, #020617, #000000);
+      padding: 80px 0;
+    }
 
-          <div className="flex justify-center">
-            <div className="w-80 h-80 rounded-3xl bg-gradient-to-br from-cyan-500 to-blue-700 shadow-2xl flex items-center justify-center text-6xl font-bold">
-              SK
-            </div>
-          </div>
+    .hero-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      flex: 1;
+      min-width: 300px;
+    }
+
+    .hero-text h1 {
+      font-size: 64px;
+      margin-bottom: 20px;
+    }
+
+    .hero-text p {
+      color: #cbd5e1;
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .subtitle {
+      color: #22d3ee;
+      font-size: 20px;
+      margin-bottom: 15px;
+    }
+
+    .buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .btn {
+      padding: 14px 24px;
+      border-radius: 12px;
+      font-weight: bold;
+      transition: 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-primary {
+      background: #06b6d4;
+      color: white;
+    }
+
+    .btn-primary:hover {
+      background: #0891b2;
+    }
+
+    .btn-outline {
+      border: 1px solid #334155;
+      color: white;
+    }
+
+    .btn-outline:hover {
+      border-color: #22d3ee;
+    }
+
+    .btn-whatsapp {
+      background: #16a34a;
+      color: white;
+    }
+
+    .btn-whatsapp:hover {
+      background: #15803d;
+    }
+
+    .profile-box {
+      width: 300px;
+      height: 300px;
+      border-radius: 30px;
+      background: linear-gradient(135deg, #06b6d4, #2563eb);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 72px;
+      font-weight: bold;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    .section-dark {
+      background: #0f172a;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 42px;
+      margin-bottom: 50px;
+    }
+
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .metric-card,
+    .skill,
+    .card {
+      background: #111827;
+      border-radius: 20px;
+      padding: 25px;
+      border: 1px solid #1e293b;
+      transition: 0.3s;
+    }
+
+    .metric-card:hover,
+    .skill:hover,
+    .card:hover {
+      border-color: #22d3ee;
+      transform: translateY(-5px);
+    }
+
+    .metric-card h3 {
+      color: #22d3ee;
+      font-size: 40px;
+      margin-bottom: 10px;
+    }
+
+    .skills-grid,
+    .cert-grid,
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .experience {
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+    }
+
+    .card h3 {
+      color: #22d3ee;
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .card h4 {
+      color: #cbd5e1;
+      margin-bottom: 15px;
+    }
+
+    .card ul {
+      padding-left: 20px;
+      color: #cbd5e1;
+    }
+
+    .card li {
+      margin-bottom: 10px;
+    }
+
+    .contact-box {
+      text-align: center;
+    }
+
+    .contact-box h3 {
+      color: #22d3ee;
+      margin-bottom: 10px;
+    }
+
+    footer {
+      padding: 30px;
+      text-align: center;
+      border-top: 1px solid #1e293b;
+      color: #94a3b8;
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 42px;
+      }
+
+      .hero-content {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+    }
+  </style>
+
+  <div class="hero">
+    <div class="container hero-content">
+      <div class="hero-text">
+        <div class="subtitle">Senior BI & Analytics Consultant</div>
+        <h1>Sachin Kadam</h1>
+
+        <p>
+          Senior Principal Consultant with 9.9+ years of experience in
+          TIBCO Spotfire, Power BI, AI/ML, Python, SQL, and enterprise analytics solutions.
+        </p>
+
+        <div class="buttons">
+          <a href="#contact" class="btn btn-primary">Contact Me</a>
+
+          <a
+            href="https://www.linkedin.com/in/iim-nagpur/"
+            target="_blank"
+            class="btn btn-outline"
+          >
+            🔗 LinkedIn
+          </a>
+
+          <a
+            href="https://wa.me/918087781156"
+            target="_blank"
+            class="btn btn-whatsapp"
+          >
+            💬 WhatsApp
+          </a>
         </div>
-      </section>
+      </div>
 
-      {/* Metrics */}
-      <section className="px-6 py-14 lg:px-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 lg:grid-cols-4 gap-6">
-          {[
-            ['9.9+', 'Years Experience'],
-            ['60+', 'Dashboards Delivered'],
-            ['5+', 'Enterprise Clients'],
-            ['10+', 'Certifications']
-          ].map(([value, label]) => (
-            <div
-              key={label}
-              className="bg-slate-800 rounded-3xl p-8 text-center shadow-lg"
-            >
-              <h2 className="text-4xl font-bold text-cyan-400 mb-2">
-                {value}
-              </h2>
-              <p className="text-slate-300">{label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* About */}
-      <section className="px-6 py-20 lg:px-20">
-        <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">About Me</h2>
-
-          <p className="text-slate-300 text-lg leading-relaxed">
-            I specialize in enterprise analytics, business intelligence, and
-            dashboard development using TIBCO Spotfire, Power BI, Python, SQL,
-            and AI/ML technologies. I have successfully delivered enterprise
-            analytics solutions for healthcare, pharmaceutical, and technology
-            clients including Pfizer, Amgen, Merck, Sanofi, and
-            STMicroelectronics.
-          </p>
-        </div>
-      </section>
-
-      {/* Skills */}
-      <section className="px-6 py-20 lg:px-20 bg-slate-900">
-        <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Technical Skills
-          </h2>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            {skills.map((skill) => (
-              <div
-                key={skill}
-                className="px-5 py-3 bg-slate-800 rounded-2xl border border-slate-700 hover:border-cyan-400 transition"
-              >
-                {skill}
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Experience */}
-      <section className="px-6 py-20 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">
-            Experience
-          </h2>
-
-          <div className="space-y-10">
-            {experience.map((job) => (
-              <div
-                key={job.company}
-                className="bg-slate-900 rounded-3xl p-8 border border-slate-800 shadow-xl"
-              >
-                <div className="flex flex-col lg:flex-row lg:justify-between lg:items-center mb-6">
-                  <div>
-                    <h3 className="text-2xl font-bold text-cyan-400">
-                      {job.role}
-                    </h3>
-
-                    <p className="text-xl text-slate-300 mt-1">
-                      {job.company}
-                    </p>
-                  </div>
-
-                  <div className="mt-4 lg:mt-0 text-slate-400">
-                    {job.duration}
-                  </div>
-                </div>
-
-                <ul className="space-y-3 text-slate-300 list-disc pl-6">
-                  {job.points.map((point) => (
-                    <li key={point}>{point}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Certifications */}
-      <section className="px-6 py-20 lg:px-20 bg-slate-900">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Certifications
-          </h2>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {certifications.map((cert) => (
-              <div
-                key={cert}
-                className="bg-slate-800 rounded-3xl p-6 border border-slate-700 hover:border-cyan-400 transition"
-              >
-                <p className="text-lg">{cert}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Publications */}
-      <section className="px-6 py-20 lg:px-20">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">
-            Publications & Research
-          </h2>
-
-          <div className="space-y-6">
-            {[
-              'Survey of Detection Fast Radio Burst Using Machine Learning',
-              'Sentiment Analysis on Comment Reviews for Product Recommendation Using Machine Learning',
-              'Neural Network Chatbot with Advanced Voice Recognition for Banking Industry'
-            ].map((paper) => (
-              <div
-                key={paper}
-                className="bg-slate-900 rounded-3xl p-6 border border-slate-800"
-              >
-                <p className="text-lg text-slate-300">{paper}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Contact */}
-      <section
-        id="contact"
-        className="px-6 py-20 lg:px-20 bg-gradient-to-r from-slate-950 to-black"
-      >
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
-
-          <p className="text-slate-300 text-lg mb-10">
-            Available for BI consulting, analytics projects, dashboard
-            development, AI/ML solutions, and enterprise reporting.
-          </p>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
-                Email
-              </h3>
-
-              <p className="text-slate-300 break-all">
-                sachinkadam313@gmail.com
-              </p>
-            </div>
-
-            <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
-                Location
-              </h3>
-
-              <p className="text-slate-300">Pune, Maharashtra, India</p>
-            </div>
-
-            <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
-                Phone
-              </h3>
-
-              <p className="text-slate-300">+91 8087781156</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <footer className="py-8 text-center text-slate-500 border-t border-slate-800">
-        © 2026 Sachin Kadam • Portfolio Website
-      </footer>
+      <div class="profile-box">SK</div>
     </div>
+  </div>
+
+  <section class="section-dark">
+    <div class="container">
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="skills-grid">
+        <div class="skill">TIBCO Spotfire</div>
+        <div class="skill">Power BI</div>
+        <div class="skill">Python</div>
+        <div class="skill">SQL</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">AI & Machine Learning</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <h2 class="section-title">Get In Touch</h2>
+
+      <div class="contact-grid">
+        <div class="card contact-box">
+          <h3>Email</h3>
+          <p>sachinkadam313@gmail.com</p>
+        </div>
+
+        <div class="card contact-box">
+          <h3>Location</h3>
+          <p>Pune, Maharashtra, India</p>
+        </div>
+
+        <div class="card contact-box">
+          <h3>Phone</h3>
+          <p>+91 8087781156</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Sachin Kadam • Portfolio Website
+  </footer>
+`,
+      }}
+    />
   );
 }
