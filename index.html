@@ -1,542 +1,394 @@
-```html
-<!DOCTYPE html>
-<html lang="en">
+export default function PortfolioWebsite() {
+  return (
+    <>
+      <style>{`
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+          scroll-behavior: smooth;
+        }
 
-<head>
+        body {
+          user-select: none;
+          font-family: Arial, sans-serif;
+          background: #020617;
+          color: white;
+          line-height: 1.6;
+        }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+        a {
+          text-decoration: none;
+        }
 
-<title>Sachin Kadam | Portfolio</title>
+        .container {
+          width: 90%;
+          max-width: 1200px;
+          margin: auto;
+        }
 
-<style>
+        .hero {
+          min-height: 100vh;
+          display: flex;
+          align-items: center;
+          background: linear-gradient(to right, #0f172a, #020617, #000000);
+          padding: 80px 0;
+        }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    scroll-behavior:smooth;
+        .hero-content {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 50px;
+          flex-wrap: wrap;
+        }
+
+        .hero-text {
+          flex: 1;
+          min-width: 300px;
+        }
+
+        .hero-text h1 {
+          font-size: 64px;
+          margin-bottom: 20px;
+        }
+
+        .hero-text p {
+          color: #cbd5e1;
+          font-size: 18px;
+          margin-bottom: 30px;
+        }
+
+        .subtitle {
+          color: #22d3ee;
+          font-size: 20px;
+          margin-bottom: 15px;
+        }
+
+        .buttons {
+          display: flex;
+          flex-wrap: wrap;
+          gap: 15px;
+        }
+
+        .btn {
+          padding: 14px 24px;
+          border-radius: 12px;
+          font-weight: bold;
+          transition: 0.3s;
+          display: inline-flex;
+          align-items: center;
+          gap: 10px;
+        }
+
+        .btn-primary {
+          background: #06b6d4;
+          color: white;
+        }
+
+        .btn-outline {
+          border: 1px solid #334155;
+          color: white;
+        }
+
+        .btn-meeting {
+          background: #2563eb;
+          color: white;
+        }
+
+        .bird {
+          position: fixed;
+          top: 100px;
+          left: -100px;
+          font-size: 42px;
+          z-index: 9999;
+          animation: flyBird 18s linear infinite;
+          pointer-events: none;
+          opacity: 0.9;
+        }
+
+        @keyframes flyBird {
+          0% {
+            transform: translateX(0px) translateY(0px);
+          }
+
+          25% {
+            transform: translateX(30vw) translateY(-40px);
+          }
+
+          50% {
+            transform: translateX(60vw) translateY(20px);
+          }
+
+          75% {
+            transform: translateX(90vw) translateY(-30px);
+          }
+
+          100% {
+            transform: translateX(120vw) translateY(10px);
+          }
+        }
+
+        .profile-box {
+          width: 300px;
+          height: 300px;
+          border-radius: 30px;
+          background: linear-gradient(135deg, #06b6d4, #2563eb);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 72px;
+          font-weight: bold;
+        }
+
+        .section-dark {
+          background: #0f172a;
+          padding: 80px 0;
+        }
+
+        .section-title {
+          text-align: center;
+          font-size: 42px;
+          margin-bottom: 50px;
+        }
+
+        .skills-grid,
+        .contact-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+          gap: 20px;
+        }
+
+        .skill,
+        .card {
+          background: #111827;
+          border-radius: 20px;
+          padding: 25px;
+          border: 1px solid #1e293b;
+        }
+
+        .contact-box {
+          text-align: center;
+        }
+
+        .contact-box h3 {
+          color: #22d3ee;
+          margin-bottom: 10px;
+        }
+
+        footer {
+          padding: 30px;
+          text-align: center;
+          border-top: 1px solid #1e293b;
+          color: #94a3b8;
+        }
+
+        @media (max-width: 768px) {
+          .hero-text h1 {
+            font-size: 42px;
+          }
+
+          .hero-content {
+            flex-direction: column;
+            text-align: center;
+          }
+
+          .buttons {
+            justify-content: center;
+          }
+        }
+      `}</style>
+
+      <div onContextMenu={(e) => e.preventDefault()}>
+        <div className="bird">🕊️</div>
+        <section className="hero">
+          <div className="container hero-content">
+            <div className="hero-text">
+              <div className="subtitle">Senior BI & Analytics Consultant</div>
+
+              <h1>Sachin Kadam</h1>
+
+              <p>
+                Senior Principal Consultant with 9.9+ years of experience in
+                TIBCO Spotfire, Power BI, AI/ML, Python, SQL, and enterprise analytics solutions.
+              </p>
+
+              <div className="buttons">
+                <a
+                  href="https://www.linkedin.com/in/iim-nagpur/details/recommendations/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-primary"
+                >
+                  ⭐ LinkedIn Recommendations
+                </a>
+                <a href="#contact" className="btn btn-primary">
+                  Contact Me
+                </a>
+
+                <a
+                  href="https://www.linkedin.com/in/iim-nagpur/"
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-outline"
+                >
+                  🔗 LinkedIn
+                </a>
+
+                <a
+                  href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sachin+Kadam&dates=20260510T093000Z/20260510T103000Z&details=Discussion+regarding+Business+Intelligence,+Analytics,+TIBCO+Spotfire,+Power+BI,+AI%2FML,+Dashboard+Development,+and+Enterprise+Consulting.%0A%0AMeeting+Organizer%3A+Sachin+Kadam%0AEmail%3A+sachinkadam313%40gmail.com&location=Google+Meet&add=sachinkadam313@gmail.com
+                  target="_blank"
+                  rel="noreferrer"
+                  className="btn btn-meeting"
+                >
+                  📅 Schedule Meeting
+                </a>
+              </div>
+            </div>
+
+            <div className="profile-box">SK</div>
+          </div>
+        </section>
+
+        <section className="section-dark">
+          <div className="container">
+            <h2 className="section-title">Professional Highlights</h2>
+
+            <div className="skills-grid">
+              <div className="skill">9.9+ Years Enterprise BI Experience</div>
+              <div className="skill">60+ Enterprise Dashboards Delivered</div>
+              <div className="skill">Senior Principal Consultant at Virtana</div>
+              <div className="skill">Expert in TIBCO Spotfire & Power BI</div>
+              <div className="skill">AI/ML & Data Science Specialist</div>
+              <div className="skill">Worked with Pfizer, Amgen, Merck & Sanofi</div>
+              <div className="skill">FDA Reporting & Pharmacovigilance Analytics</div>
+              <div className="skill">Cloud & On-Premise Analytics Solutions</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-dark">
+          <div className="container">
+            <h2 className="section-title">Technical Skills</h2>
+
+            <div className="skills-grid">
+              <div className="skill">TIBCO Spotfire</div>
+              <div className="skill">Power BI</div>
+              <div className="skill">IBM Cognos</div>
+              <div className="skill">Python</div>
+              <div className="skill">R Programming</div>
+              <div className="skill">SQL & Snowflake</div>
+              <div className="skill">Oracle & PostgreSQL</div>
+              <div className="skill">IronPython</div>
+              <div className="skill">JavaScript</div>
+              <div className="skill">HTML/CSS</div>
+              <div className="skill">AI & Machine Learning</div>
+              <div className="skill">Data Science & Analytics</div>
+              <div className="skill">Dashboard Optimization</div>
+              <div className="skill">ETL & Data Governance</div>
+              <div className="skill">Automation Services</div>
+              <div className="skill">Executive Reporting</div>
+              <div className="skill">Power BI</div>
+              <div className="skill">Python</div>
+              <div className="skill">SQL</div>
+              <div className="skill">JavaScript</div>
+              <div className="skill">AI & Machine Learning</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-dark">
+          <div className="container">
+            <h2 className="section-title">Certifications & Achievements</h2>
+
+            <div className="skills-grid">
+              <div className="skill">TIBCO Spotfire Certified Professional</div>
+              <div className="skill">Certified Scrum Master (CSM)</div>
+              <div className="skill">ITIL Foundation Certification</div>
+              <div className="skill">Alteryx Designer Core Certification</div>
+              <div className="skill">Project Management Certification - ISB/IIM Nagpur</div>
+              <div className="skill">Silver Recognition Award - IQVIA</div>
+              <div className="skill">Top Performer Award - Cognizant</div>
+              <div className="skill">Published AI/ML Research Papers</div>
+            </div>
+          </div>
+        </section>
+
+        <section className="section-dark">
+          <div className="container">
+            <h2 className="section-title">Recommendations & Testimonials</h2>
+
+            <div className="contact-grid">
+              <div className="card">
+                <h3>Professional Recommendations</h3>
+                <p>
+                  Recognized by colleagues and enterprise stakeholders for leadership,
+                  technical expertise, problem solving, and delivery excellence across
+                  healthcare, pharma, and analytics projects.
+                </p>
+              </div>
+
+              <div className="card">
+                <h3>Leadership & Collaboration</h3>
+                <p>
+                  Appreciated for mentoring teams, delivering high-quality analytics
+                  solutions, supporting enterprise BI transformations, and maintaining
+                  strong stakeholder communication.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="contact" className="section-dark">
+          <div className="container">
+            <h2 className="section-title">Get In Touch</h2>
+
+            <div className="contact-grid">
+              <div className="card contact-box">
+                <h3>Email</h3>
+                <p>sachinkadam313@gmail.com</p>
+              </div>
+
+              <div className="card contact-box">
+                <h3>Location</h3>
+                <p>Pune, Maharashtra, India</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <script dangerouslySetInnerHTML={{__html: `
+          document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12') {
+              e.preventDefault();
+            }
+
+            if (e.ctrlKey && e.shiftKey && e.key === 'I') {
+              e.preventDefault();
+            }
+
+            if (e.ctrlKey && e.key === 'u') {
+              e.preventDefault();
+            }
+
+            if (e.ctrlKey && e.key === 's') {
+              e.preventDefault();
+            }
+          });
+
+          document.addEventListener('copy', function(e) {
+            e.preventDefault();
+          });
+
+          console.clear();
+          console.log('Protected Portfolio Website');
+        `}} />
+
+        <footer>
+          © 2026 Sachin Kadam • Portfolio Website
+        </footer>
+      </div>
+    </>
+  );
 }
-
-body{
-    font-family:Arial, sans-serif;
-    background:#020617;
-    color:white;
-    line-height:1.6;
-}
-
-a{
-    text-decoration:none;
-}
-
-.container{
-    width:90%;
-    max-width:1200px;
-    margin:auto;
-}
-
-.hero{
-    min-height:100vh;
-    display:flex;
-    align-items:center;
-    background:linear-gradient(to right,#0f172a,#020617,#000000);
-    padding:80px 0;
-}
-
-.hero-content{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    flex-wrap:wrap;
-    gap:50px;
-}
-
-.hero-text{
-    flex:1;
-    min-width:300px;
-}
-
-.subtitle{
-    color:#22d3ee;
-    font-size:20px;
-    margin-bottom:15px;
-}
-
-.hero-text h1{
-    font-size:64px;
-    margin-bottom:20px;
-}
-
-.hero-text p{
-    color:#cbd5e1;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.buttons{
-    display:flex;
-    flex-wrap:wrap;
-    gap:15px;
-}
-
-.btn{
-    padding:14px 24px;
-    border-radius:12px;
-    font-weight:bold;
-    transition:0.3s;
-    display:inline-flex;
-    align-items:center;
-    gap:10px;
-}
-
-.btn-primary{
-    background:#06b6d4;
-    color:white;
-}
-
-.btn-primary:hover{
-    background:#0891b2;
-}
-
-.btn-outline{
-    border:1px solid #334155;
-    color:white;
-}
-
-.btn-outline:hover{
-    border-color:#22d3ee;
-}
-
-.btn-meeting{
-    background:#2563eb;
-    color:white;
-}
-
-.btn-meeting:hover{
-    background:#1d4ed8;
-}
-
-.profile-box{
-    width:300px;
-    height:300px;
-    border-radius:30px;
-    background:linear-gradient(135deg,#06b6d4,#2563eb);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:72px;
-    font-weight:bold;
-    box-shadow:0 20px 50px rgba(0,0,0,0.5);
-}
-
-section{
-    padding:80px 0;
-}
-
-.section-dark{
-    background:#0f172a;
-}
-
-.section-title{
-    text-align:center;
-    font-size:42px;
-    margin-bottom:50px;
-}
-
-.skills-grid,
-.contact-grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
-}
-
-.skill,
-.card{
-    background:#111827;
-    border-radius:20px;
-    padding:25px;
-    border:1px solid #1e293b;
-    transition:0.3s;
-}
-
-.skill:hover,
-.card:hover{
-    border-color:#22d3ee;
-    transform:translateY(-5px);
-}
-
-.contact-box{
-    text-align:center;
-}
-
-.contact-box h3{
-    color:#22d3ee;
-    margin-bottom:10px;
-}
-
-footer{
-    padding:30px;
-    text-align:center;
-    border-top:1px solid #1e293b;
-    color:#94a3b8;
-}
-
-.recommendation h3{
-    color:#22d3ee;
-    margin-bottom:10px;
-}
-
-@media(max-width:768px){
-
-    .hero-text h1{
-        font-size:42px;
-    }
-
-    .hero-content{
-        flex-direction:column;
-        text-align:center;
-    }
-
-    .buttons{
-        justify-content:center;
-    }
-
-}
-
-</style>
-
-</head>
-
-<body>
-
-<!-- HERO -->
-
-<section class="hero">
-
-<div class="container hero-content">
-
-<div class="hero-text">
-
-<div class="subtitle">
-Senior BI & Analytics Consultant
-</div>
-
-<h1>Sachin Kadam</h1>
-
-<p>
-Senior Principal Consultant with 9.9+ years of experience in
-TIBCO Spotfire, Power BI, AI/ML, Python, SQL,
-and enterprise analytics solutions.
-</p>
-
-<div class="buttons">
-
-<a href="#contact" class="btn btn-primary">
-Contact Me
-</a>
-
-<a
-href="https://www.linkedin.com/in/iim-nagpur/"
-target="_blank"
-class="btn btn-outline"
->
-🔗 LinkedIn Profile
-</a>
-
-<a
-href="https://calendar.google.com/calendar/render?action=TEMPLATE&text=Meeting+with+Sachin+Kadam&dates=20260510T093000Z/20260510T103000Z&details=Discussion+regarding+Business+Intelligence,+Analytics,+TIBCO+Spotfire,+Power+BI,+AI%2FML,+Dashboard+Development,+and+Enterprise+Consulting.%0A%0AMeeting+Organizer%3A+Sachin+Kadam%0AEmail%3A+sachinkadam313%40gmail.com&location=Google+Meet&add=sachinkadam313@gmail.com"
-target="_blank"
-class="btn btn-meeting"
->
-📅 Schedule Google Meet
-</a>
-
-</div>
-
-</div>
-
-<div class="profile-box">
-SK
-</div>
-
-</div>
-
-</section>
-
-<!-- PROFESSIONAL HIGHLIGHTS -->
-
-<section class="section-dark">
-
-<div class="container">
-
-<h2 class="section-title">
-Professional Highlights
-</h2>
-
-<div class="skills-grid">
-
-<div class="skill">9.9+ Years Enterprise BI Experience</div>
-<div class="skill">60+ Enterprise Dashboards Delivered</div>
-<div class="skill">Senior Principal Consultant at Virtana</div>
-<div class="skill">Expert in TIBCO Spotfire & Power BI</div>
-<div class="skill">AI/ML & Data Science Specialist</div>
-<div class="skill">Worked with Pfizer, Amgen, Merck & Sanofi</div>
-<div class="skill">FDA Reporting & Pharmacovigilance Analytics</div>
-<div class="skill">Cloud & On-Premise Analytics Solutions</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TECHNICAL SKILLS -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Technical Skills
-</h2>
-
-<div class="skills-grid">
-
-<div class="skill">TIBCO Spotfire</div>
-<div class="skill">Power BI</div>
-<div class="skill">IBM Cognos</div>
-<div class="skill">Python</div>
-<div class="skill">R Programming</div>
-<div class="skill">SQL & Snowflake</div>
-<div class="skill">Oracle & PostgreSQL</div>
-<div class="skill">IronPython</div>
-<div class="skill">JavaScript</div>
-<div class="skill">HTML/CSS</div>
-<div class="skill">AI & Machine Learning</div>
-<div class="skill">Data Science & Analytics</div>
-<div class="skill">Dashboard Optimization</div>
-<div class="skill">ETL & Data Governance</div>
-<div class="skill">Automation Services</div>
-<div class="skill">Executive Reporting</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- EDUCATION -->
-
-<section class="section-dark">
-
-<div class="container">
-
-<h2 class="section-title">
-Education
-</h2>
-
-<div class="contact-grid">
-
-<div class="card">
-
-<h3 style="color:#22d3ee; margin-bottom:10px;">
-MBA / Executive Program
-</h3>
-
-<p style="margin-bottom:10px; color:#cbd5e1;">
-Indian Institute of Management (IIM) Nagpur
-</p>
-
-<p>
-Project Management & Business Leadership
-</p>
-
-</div>
-
-<div class="card">
-
-<h3 style="color:#22d3ee; margin-bottom:10px;">
-Master of Computer Applications (MCA)
-</h3>
-
-<p style="margin-bottom:10px; color:#cbd5e1;">
-Savitribai Phule Pune University
-</p>
-
-<p>
-Computer Applications, Data Analytics & Software Development
-</p>
-
-</div>
-
-<div class="card">
-
-<h3 style="color:#22d3ee; margin-bottom:10px;">
-Bachelor of Computer Science
-</h3>
-
-<p style="margin-bottom:10px; color:#cbd5e1;">
-Savitribai Phule Pune University
-</p>
-
-<p>
-Computer Science & Information Technology
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CERTIFICATIONS -->
-
-<section>
-
-<div class="container">
-
-<h2 class="section-title">
-Certifications & Achievements
-</h2>
-
-<div class="skills-grid">
-
-<div class="skill">TIBCO Spotfire Certified Professional</div>
-<div class="skill">Certified Scrum Master (CSM)</div>
-<div class="skill">ITIL Foundation Certification</div>
-<div class="skill">Alteryx Designer Core Certification</div>
-<div class="skill">Project Management Certification - ISB/IIM Nagpur</div>
-<div class="skill">Silver Recognition Award - IQVIA</div>
-<div class="skill">Top Performer Award - Cognizant</div>
-<div class="skill">Published AI/ML Research Papers</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- TESTIMONIALS -->
-
-<section class="section-dark">
-
-<div class="container">
-
-<h2 class="section-title">
-Recommendations & Testimonials
-</h2>
-
-<div class="contact-grid">
-
-<div class="card recommendation">
-
-<h3>
-Leadership & Delivery Excellence
-</h3>
-
-<p>
-Recognized by colleagues and stakeholders for enterprise dashboard delivery,
-technical leadership, business understanding,
-and problem-solving capabilities.
-</p>
-
-</div>
-
-<div class="card recommendation">
-
-<h3>
-Analytics & BI Expertise
-</h3>
-
-<p>
-Appreciated for deep expertise in Spotfire, Power BI,
-SQL, AI/ML, and enterprise analytics implementations
-across pharmaceutical and healthcare domains.
-</p>
-
-</div>
-
-<div class="card recommendation">
-
-<h3>
-Team Collaboration
-</h3>
-
-<p>
-Acknowledged for mentoring teams,
-maintaining strong stakeholder communication,
-and delivering high-quality enterprise reporting solutions.
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- CONTACT -->
-
-<section id="contact">
-
-<div class="container">
-
-<h2 class="section-title">
-Get In Touch
-</h2>
-
-<div class="contact-grid">
-
-<div class="card contact-box">
-
-<h3>Email</h3>
-
-<p>
-sachinkadam313@gmail.com
-</p>
-
-</div>
-
-<div class="card contact-box">
-
-<h3>Location</h3>
-
-<p>
-Pune, Maharashtra, India
-</p>
-
-</div>
-
-<div class="card contact-box">
-
-<h3>Availability</h3>
-
-<p>
-Available for BI Consulting & Analytics Projects
-</p>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<footer>
-© 2026 Sachin Kadam • Portfolio Website
-</footer>
-
-<script>
-
-console.log("Sachin Kadam Portfolio Website Loaded Successfully");
-
-</script>
-
-</body>
-
-</html>
-```
