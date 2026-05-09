@@ -158,26 +158,81 @@ export default function PortfolioWebsite() {
           height: 100%;
           top: 0;
           left: 0;
+          overflow: hidden;
+          z-index: -1;
+        }
 
-        @keyframes flyBird {
+        .circle {
+          position: absolute;
+          border-radius: 50%;
+          background: rgba(34, 211, 238, 0.08);
+          animation: floatCircle 20s linear infinite;
+        }
+
+        .circle:nth-child(1) {
+          width: 200px;
+          height: 200px;
+          left: 10%;
+          top: 20%;
+        }
+
+        .circle:nth-child(2) {
+          width: 300px;
+          height: 300px;
+          right: 10%;
+          top: 10%;
+          animation-duration: 25s;
+        }
+
+        .circle:nth-child(3) {
+          width: 150px;
+          height: 150px;
+          left: 40%;
+          bottom: 10%;
+          animation-duration: 18s;
+        }
+
+        @keyframes flyBird1 {
+          0% { transform: translateX(0) translateY(0); }
+          50% { transform: translateX(60vw) translateY(-40px); }
+          100% { transform: translateX(130vw) translateY(20px); }
+        }
+
+        @keyframes flyBird2 {
+          0% { transform: translateX(0) translateY(0); }
+          50% { transform: translateX(70vw) translateY(30px); }
+          100% { transform: translateX(130vw) translateY(-30px); }
+        }
+
+        @keyframes flyBird3 {
+          0% { transform: translateX(0) translateY(0); }
+          50% { transform: translateX(65vw) translateY(-20px); }
+          100% { transform: translateX(130vw) translateY(40px); }
+        }
+
+        @keyframes flyBird4 {
+          0% { transform: translateX(0) translateY(0); }
+          50% { transform: translateX(80vw) translateY(20px); }
+          100% { transform: translateX(130vw) translateY(-40px); }
+        }
+
+        @keyframes flyBird5 {
+          0% { transform: translateX(0) translateY(0); }
+          50% { transform: translateX(75vw) translateY(-35px); }
+          100% { transform: translateX(130vw) translateY(25px); }
+        }
+
+        @keyframes floatCircle {
           0% {
-            transform: translateX(0px) translateY(0px);
-          }
-
-          25% {
-            transform: translateX(30vw) translateY(-40px);
+            transform: translateY(0px) rotate(0deg);
           }
 
           50% {
-            transform: translateX(60vw) translateY(20px);
-          }
-
-          75% {
-            transform: translateX(90vw) translateY(-30px);
+            transform: translateY(-40px) rotate(180deg);
           }
 
           100% {
-            transform: translateX(120vw) translateY(10px);
+            transform: translateY(0px) rotate(360deg);
           }
         }
 
@@ -266,7 +321,17 @@ export default function PortfolioWebsite() {
         onKeyDown={handleKeyDown}
         tabIndex="0"
       >
-        <div className="bird">🕊️</div>
+        <div className="background-animation">
+          <div className="circle"></div>
+          <div className="circle"></div>
+          <div className="circle"></div>
+        </div>
+
+        <div className="bird bird1">🕊️</div>
+        <div className="bird bird2">🦅</div>
+        <div className="bird bird3">🕊️</div>
+        <div className="bird bird4">🦅</div>
+        <div className="bird bird5">🕊️</div>
 
         <section className="hero">
           <div className="container hero-content">
