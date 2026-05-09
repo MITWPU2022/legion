@@ -82,10 +82,14 @@ export default function PortfolioWebsite() {
       <section className="px-6 py-20 lg:px-20 bg-gradient-to-r from-slate-900 via-slate-950 to-black">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 items-center">
           <div>
-            <p className="text-cyan-400 text-lg mb-4">Senior BI & Analytics Consultant</p>
+            <p className="text-cyan-400 text-lg mb-4">
+              Senior BI & Analytics Consultant
+            </p>
+
             <h1 className="text-5xl lg:text-7xl font-bold leading-tight mb-6">
               Sachin Kadam
             </h1>
+
             <p className="text-slate-300 text-lg leading-relaxed mb-8">
               Senior Principal Consultant with 9.9+ years of experience in
               TIBCO Spotfire, Power BI, AI/ML, Python, SQL, and enterprise
@@ -103,9 +107,21 @@ export default function PortfolioWebsite() {
               <a
                 href="https://www.linkedin.com/in/iim-nagpur/"
                 target="_blank"
-                className="px-6 py-3 rounded-2xl border border-slate-700 hover:border-cyan-400 transition"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-2xl border border-slate-700 hover:border-cyan-400 transition flex items-center gap-2"
               >
+                <span className="text-lg">🔗</span>
                 LinkedIn
+              </a>
+
+              <a
+                href="https://wa.me/918087781156"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="px-6 py-3 rounded-2xl bg-green-600 hover:bg-green-500 transition flex items-center gap-2"
+              >
+                <span className="text-lg">💬</span>
+                WhatsApp
               </a>
             </div>
           </div>
@@ -131,7 +147,9 @@ export default function PortfolioWebsite() {
               key={label}
               className="bg-slate-800 rounded-3xl p-8 text-center shadow-lg"
             >
-              <h2 className="text-4xl font-bold text-cyan-400 mb-2">{value}</h2>
+              <h2 className="text-4xl font-bold text-cyan-400 mb-2">
+                {value}
+              </h2>
               <p className="text-slate-300">{label}</p>
             </div>
           ))}
@@ -142,12 +160,14 @@ export default function PortfolioWebsite() {
       <section className="px-6 py-20 lg:px-20">
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-4xl font-bold mb-8">About Me</h2>
+
           <p className="text-slate-300 text-lg leading-relaxed">
             I specialize in enterprise analytics, business intelligence, and
             dashboard development using TIBCO Spotfire, Power BI, Python, SQL,
             and AI/ML technologies. I have successfully delivered enterprise
             analytics solutions for healthcare, pharmaceutical, and technology
-            clients including Pfizer, Amgen, Merck, Sanofi, and STMicroelectronics.
+            clients including Pfizer, Amgen, Merck, Sanofi, and
+            STMicroelectronics.
           </p>
         </div>
       </section>
@@ -155,7 +175,9 @@ export default function PortfolioWebsite() {
       {/* Skills */}
       <section className="px-6 py-20 lg:px-20 bg-slate-900">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-14">Technical Skills</h2>
+          <h2 className="text-4xl font-bold text-center mb-14">
+            Technical Skills
+          </h2>
 
           <div className="flex flex-wrap justify-center gap-4">
             {skills.map((skill) => (
@@ -173,7 +195,9 @@ export default function PortfolioWebsite() {
       {/* Experience */}
       <section className="px-6 py-20 lg:px-20">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center mb-16">Experience</h2>
+          <h2 className="text-4xl font-bold text-center mb-16">
+            Experience
+          </h2>
 
           <div className="space-y-10">
             {experience.map((job) => (
@@ -186,7 +210,10 @@ export default function PortfolioWebsite() {
                     <h3 className="text-2xl font-bold text-cyan-400">
                       {job.role}
                     </h3>
-                    <p className="text-xl text-slate-300 mt-1">{job.company}</p>
+
+                    <p className="text-xl text-slate-300 mt-1">
+                      {job.company}
+                    </p>
                   </div>
 
                   <div className="mt-4 lg:mt-0 text-slate-400">
@@ -258,25 +285,34 @@ export default function PortfolioWebsite() {
           <h2 className="text-4xl font-bold mb-8">Get In Touch</h2>
 
           <p className="text-slate-300 text-lg mb-10">
-            Available for BI consulting, analytics projects, dashboard development,
-            AI/ML solutions, and enterprise reporting.
+            Available for BI consulting, analytics projects, dashboard
+            development, AI/ML solutions, and enterprise reporting.
           </p>
 
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">Email</h3>
+              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
+                Email
+              </h3>
+
               <p className="text-slate-300 break-all">
                 sachinkadam313@gmail.com
               </p>
             </div>
 
             <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">Location</h3>
+              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
+                Location
+              </h3>
+
               <p className="text-slate-300">Pune, Maharashtra, India</p>
             </div>
 
             <div className="bg-slate-900 rounded-3xl p-6 border border-slate-800">
-              <h3 className="text-cyan-400 text-xl font-semibold mb-2">Phone</h3>
+              <h3 className="text-cyan-400 text-xl font-semibold mb-2">
+                Phone
+              </h3>
+
               <p className="text-slate-300">+91 8087781156</p>
             </div>
           </div>
